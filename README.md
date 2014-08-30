@@ -1,6 +1,6 @@
 # StrongActions
 
-TODO: Write a gem description
+Access control for rails controller/action.
 
 ## Installation
 
