@@ -23,8 +23,8 @@ module StrongActions
         role_definition = StrongActions.config.role_definition(role)
         next unless role_definition
 
+        raise "role #{role} is not defined in controller" unless defined?(role)
         role_object = eval(role)
-        raise "role #{role} is not defined in controller" unless role_object
 
         controller_value = role_definition[controller_name]
         next if controller_value.nil?
