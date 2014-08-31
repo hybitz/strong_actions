@@ -30,7 +30,10 @@ module StrongActions
 
         action_value = [action_value] unless action_value.is_a?(Array)
         action_value.each do |definition|
-          return false unless role.instance_eval(definition)
+          unless role.instance_eval(definition)
+            message = "#{controller_name}##{action_name} is not permitted for #{role}"
+            raise StrongActions::ForbiddenAction.new(message)
+          end 
         end
       end
 
