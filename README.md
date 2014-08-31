@@ -32,7 +32,9 @@ then prepare config/acl.yml
             update: admin?
             destroy: admin?
 
-In views, use helper_method "available?"
+In above case, when a non-admin user try to access new_user_path, StrongActions::ForbiddenAction is thrown.
+
+In views, use helper method "available?" so that links for forbidden actions are not shown.
 
     <%= link_to 'Add User' new_user_path if available?('users', 'new') %>
 
