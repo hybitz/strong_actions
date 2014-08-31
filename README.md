@@ -18,10 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-Suppose method "current_user" is available for controllers and views.
-If user has an attribute called admin and only admin can modify resource users.
+Suppose method "current_user" is available for controllers and views,
 
-Prepare config/acl.yml
+and user has an attribute called admin and only admin can modify resource "users",
+
+then prepare config/acl.yml
 
     current_user:
         users:
@@ -30,6 +31,10 @@ Prepare config/acl.yml
             edit: admin?
             update: admin?
             destroy: admin?
+
+In views, use helper_method "available?"
+
+    <%= link_to 'Add User' new_user_path if available?('users', 'new') %>
 
 ## Contributing
 
