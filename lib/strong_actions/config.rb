@@ -4,12 +4,14 @@ module StrongActions
   class Config
     include Singleton
 
-    attr_accessor :config_files
-    
     def initialize
-      self.config_files = ['config/acl.yml']
+      @config_files = ['config/acl.yml']
       Rails.logger.info "loading strong_actions config_files #{self.config_files}"
       load_config_files
+    end
+
+    def config_files
+      @config_files
     end
 
     def config_files=(files)
