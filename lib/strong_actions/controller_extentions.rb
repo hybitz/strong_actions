@@ -20,11 +20,11 @@ module StrongActions
       action_name ||= 'index'
 
       StrongActions.config.roles.each do |role|
-        role_object = eval(role)
-        raise "role #{role} is not defined in controller" unless role_object
-
         role_definition = StrongActions.config.role_definition(role)
         next unless role_definition
+
+        role_object = eval(role)
+        raise "role #{role} is not defined in controller" unless role_object
 
         controller_value = role_definition[controller_name]
         next unless controller_value
@@ -38,7 +38,7 @@ module StrongActions
 
         action_value = [action_value] unless action_value.is_a?(Array)
         action_value.each do |definition|
-          return false unless role.instance_eval(definition)
+          return false unless role_object.instance_eval(definition)
         end
       end
 
