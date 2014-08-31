@@ -19,7 +19,7 @@ module StrongActions
     def available?(controller_name, action_name = nil, params = {})
       action_name ||= 'index'
 
-      StringActions.config.roles.each do |role|
+      StrongActions.config.roles.each do |role|
         role_object = eval(role)
         raise "role #{role} is not defined in controller" unless role_object
 
