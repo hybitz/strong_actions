@@ -50,6 +50,7 @@ module StrongActions
 
       action_value = [action_value] unless action_value.is_a?(Array)
       action_value.each do |definition|
+        next if definition === true
         return false unless definition
         return false unless role_object.instance_eval(definition)
       end
