@@ -8,6 +8,7 @@ module StrongActions
     
     def initialize
       self.config_files = ['config/acl.yml']
+      Rails.logger.info "loading strong_actions config_files #{self.config_files}"
       load_config_files
     end
 
