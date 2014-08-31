@@ -12,7 +12,7 @@ module StrongActions
     def authorize_roles!
       StrongActions.config.roles.each do |role|
         unless judge(role, controller_name, action_name, params)
-          message = "#{controller_name}##{action_name} is not permitted for role #{role}"
+          message = "#{controller_name.capitalize}Controller##{action_name} is not permitted for role #{role}"
           raise StrongActions::ForbiddenAction.new(message)
         end
       end
