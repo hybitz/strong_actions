@@ -18,7 +18,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Suppose method "current_user" is available for controllers and views and use has an attribute called admin.
+
+Prepare config/acl.yml
+
+    current_user:
+        users:
+            new: admin?
+            create: admin?
+            edit: admin?
+            update: admin?
+            destroy: admin?
 
 ## Contributing
 
