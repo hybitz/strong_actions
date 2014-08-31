@@ -7,7 +7,7 @@ module StrongActions
     attr_accessor :config_files
     
     def initialize
-      config_files = ['config/acl.yml']
+      self.config_files = ['config/acl.yml']
       load_config_files
     end
 
