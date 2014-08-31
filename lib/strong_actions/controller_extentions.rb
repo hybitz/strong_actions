@@ -3,7 +3,12 @@ module StrongActions
     extend ActiveSupport::Concern
 
     included do
-      before_action :authorize_roles!
+      if ::ActionPack::VERSION::MAJOR < 4
+        before_filter :authorize_roles!
+      else
+        before_action :authorize_roles!
+      end
+
       helper_method :available?
     end
 
