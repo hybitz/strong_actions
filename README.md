@@ -18,7 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
-Suppose method "current_user" is available for controllers and views and use has an attribute called admin.
+Suppose method "current_user" is available for controllers and views.
+If user has an attribute called admin and only admin can modify resource users.
 
 Prepare config/acl.yml
 
