@@ -10,7 +10,6 @@ module StrongActions
     private
 
     def authorize_roles!
-      Rails.logger.info 'checking roles'
       unless available?(controller_name, action_name, params)
         message = "#{controller_name}##{action_name} is not permitted"
         raise StrongActions::ForbiddenAction.new(message)
@@ -28,13 +27,14 @@ module StrongActions
         raise "role #{role} is not defined in controller" unless role_object
 
         controller_value = role_definition[controller_name]
-        next unless controller_value
+        next if controller_value.nil?
 
         if controller_value.is_a?(Hash)
           action_value = controller_value[action_name]
         else
           action_value = controller_value
         end
+        next if action_value.nil?
 
         action_value = [action_value] unless action_value.is_a?(Array)
         action_value.each do |definition|
