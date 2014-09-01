@@ -25,14 +25,22 @@ and user has an attribute called admin and only admin can modify resource "users
 then prepare config/acl.yml
 
     current_user:
-        users:
-            new: admin?
-            create: admin?
-            edit: admin?
-            update: admin?
-            destroy: admin?
+      users:
+        new: admin?
+        create: admin?
+        edit: admin?
+        update: admin?
+        destroy: admin?
 
 In above case, when a non-admin user try to access new_user_path, StrongActions::ForbiddenAction is thrown.
+
+In application_controller.rb, the error should be rescued like
+
+    rescue_from StrongActions::ForbiddenAction do
+      render :file => 'public/403.html', :layout => false, :status => :forbidden
+    end
+
+In above case, all the forbidden accesses are handled by public/403.html.
 
 In views, use helper method "available?" so that links for forbidden actions are not shown.
 
