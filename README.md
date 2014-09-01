@@ -18,6 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
+
+### Configuration
+
 Suppose method "current_user" is available for controllers and views,
 
 and user has an attribute called admin and only admin can modify resource "users",
@@ -34,6 +37,8 @@ then prepare config/acl.yml
 
 In above case, when a non-admin user try to access new_user_path, StrongActions::ForbiddenAction is thrown.
 
+### Handling error in controller
+
 In application_controller.rb, the error should be rescued like
 
     rescue_from StrongActions::ForbiddenAction do
@@ -41,6 +46,8 @@ In application_controller.rb, the error should be rescued like
     end
 
 In above case, all the forbidden accesses are handled by public/403.html.
+
+### Disabling forbidden link in view
 
 In views, use helper method "available?" so that links for forbidden actions are not shown.
 
