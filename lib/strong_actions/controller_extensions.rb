@@ -1,5 +1,5 @@
 module StrongActions
-  module ControllerExtentions
+  module ControllerExtensions
     extend ActiveSupport::Concern
 
     included do
