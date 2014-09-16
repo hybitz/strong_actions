@@ -1,3 +1,4 @@
+require 'action_controller'
 require "strong_actions/version"
 require "strong_actions/config"
 require "strong_actions/forbidden_action"

@@ -5,7 +5,7 @@ module StrongActions
     include Singleton
 
     def initialize
-      @config_files = ['config/acl.yml']
+      @config_files ||= ['config/acl.yml']
       load_config_files
     end
 
