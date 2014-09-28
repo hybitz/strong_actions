@@ -1,3 +1,5 @@
+require 'strong_actions/decision'
+
 module StrongActions
   module ControllerExtensions
     extend ActiveSupport::Concern
@@ -24,8 +26,6 @@ module StrongActions
     end
 
     def available?(controller_name, action_name = nil, params = {})
-      action_name ||= 'index'
-
       StrongActions.config.roles.each do |role|
         return false unless judge(role, controller_name, action_name, params)
       end
@@ -33,7 +33,7 @@ module StrongActions
       true
     end
 
-    def judge(role, controller_name, action_name, params)
+    def judge(role, controller_name, action_name = nil, params = {})
       @decision ||= StrongActions::Decision.new(self)
       @decision.call(role, controller_name, action_name, params)
     end

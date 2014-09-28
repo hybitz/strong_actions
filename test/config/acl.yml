@@ -1,0 +1,10 @@
+current_user:
+  welcome:
+    index: true
+    destroy: false
+  books: true
+  end_of_services: false
+  stores:
+    new: admin?
+  sessions:
+    index: false
