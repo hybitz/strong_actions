@@ -9,12 +9,6 @@ module StrongActions
       role_definition = StrongActions.config.role_definition(role)
       return true unless role_definition
 
-      begin
-        role_object = @target.instance_eval(role)
-      rescue NameError
-        raise "role #{role} is not defined in controller"
-      end
-
       controller_value = role_definition[controller_name]
       return true if controller_value.nil?
 
@@ -30,11 +24,21 @@ module StrongActions
       action_value.each do |definition|
         next if definition === true
         return false unless definition
+
+        role_object = role_object_for(role)
         return false unless role_object.instance_eval(definition)
       end
 
       true
     end
-    
+
+    def role_object_for(role)
+      begin
+         return @target.instance_eval(role)
+      rescue NameError
+        raise "role #{role} is not defined in controller"
+      end
+    end
+
   end
 end
