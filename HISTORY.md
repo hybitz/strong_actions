@@ -1,5 +1,8 @@
 # History
 
+## 0.0.5
+* do not raise error when role is undefined but not needed.
+
 ## 0.0.4
 * test
 

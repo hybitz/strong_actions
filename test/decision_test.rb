@@ -45,6 +45,11 @@ class DecisionTest < Minitest::Test
     assert decision.call('current_user', 'stores', 'new')
   end
 
+  def test_role_undefined_and_not_needed
+    assert decision.call('current_user', 'some_actions')
+    assert decision.call('undefined', 'some_actions')
+  end
+
 end
 
 class User
