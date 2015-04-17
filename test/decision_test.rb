@@ -3,7 +3,7 @@ require 'test_helper'
 class DecisionTest < Minitest::Test
 
   def setup
-    StrongActions.config.config_files = File.join(File.dirname(__FILE__), 'config', 'acl.yml')
+    StrongActions.config.config_files = File.join('config', 'acl.yml')
   end
 
   def decision

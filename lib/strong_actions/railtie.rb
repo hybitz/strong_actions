@@ -3,7 +3,7 @@ module StrongActions
 
     initializer 'strong_actions' do
       ActiveSupport.on_load :action_controller do
-        include StrongActions::ControllerExtensions
+        include StrongActions::Controller
       end
     end
 

@@ -5,11 +5,11 @@ module StrongActions
       @target = target
     end
 
-    def call(role, controller_name, action_name = nil, params = {})
+    def call(role, controller_path, action_name = nil, params = {})
       role_definition = StrongActions.config.role_definition(role)
       return true unless role_definition
 
-      controller_value = role_definition[controller_name]
+      controller_value = role_definition[controller_path]
       return true if controller_value.nil?
 
       if controller_value.is_a?(Hash)

@@ -2,7 +2,7 @@ require 'action_controller'
 require "strong_actions/version"
 require "strong_actions/config"
 require "strong_actions/forbidden_action"
-require 'strong_actions/controller_extensions'
+require 'strong_actions/controller'
 
 module StrongActions
 
