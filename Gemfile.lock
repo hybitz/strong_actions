@@ -64,7 +64,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.6)
+  bundler (~> 1.7)
   minitest
-  rake
+  rake (~> 10.0)
   strong_actions!
