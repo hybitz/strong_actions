@@ -4,6 +4,8 @@ ENV["RAILS_ENV"] = "test"
 require 'minitest/autorun'
 require 'rails'
 
+ActiveSupport.test_order = :sorted
+
 class FakeApplication < Rails::Application
 end
 
