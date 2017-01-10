@@ -37,6 +37,23 @@ then prepare config/acl.yml
 
 In above case, when a non-admin user try to access new_user_path, StrongActions::ForbiddenAction is thrown.
 
+if all actions are restricted in the same way, you can make a definition on controller level.
+
+    current_user:
+      users: admin?
+
+controller definition can be namespaced.
+
+    current_user:
+      admin/users: admin?
+
+if you have multiple controllers under a namespace, namespace can be used.
+ending with '/' indicates that is for namespace 'admin' and not controller 'admin'.
+
+    current_user:
+      admin/: admin?
+
+
 ### Handling error in controller
 
 In application_controller.rb, the error should be rescued like
