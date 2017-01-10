@@ -1,5 +1,9 @@
 # History
 
+## 0.0.7
+* drop support for ruby-2.0
+* drop support for rails-3.2
+
 ## 0.0.6
 * supprts controller_path
 
