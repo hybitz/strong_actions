@@ -4,7 +4,12 @@ current_user:
     destroy: false
   books: true
   end_of_services: false
-  stores:
-    new: admin?
   sessions:
     index: false
+  stores:
+    new: admin?
+  sys_admin/: sys_admin?   
+  sys_admin/sys_config:
+    show: true
+    edit: sys_admin?
+ 
