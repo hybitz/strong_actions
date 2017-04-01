@@ -1,5 +1,8 @@
 # History
 
+## 0.0.9
+* fixed thread safety issue on multi-thread environment.
+
 ## 0.0.8
 * drop support for rails-4.0
 * add support for rails-5.0
