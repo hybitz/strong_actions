@@ -26,50 +26,50 @@ Suppose method "current_user" is available for controllers and views,
 and user has an attribute called admin and only admin can modify resource "users",
 
 then prepare config/acl.yml
-
-    current_user:
-      users:
-        new: admin?
-        create: admin?
-        edit: admin?
-        update: admin?
-        destroy: admin?
-
+```yaml
+current_user:
+  users:
+    new: admin?
+    create: admin?
+    edit: admin?
+    update: admin?
+    destroy: admin?
+```
 In above case, when a non-admin user try to access new_user_path, StrongActions::ForbiddenAction is thrown.
 
 if all actions are restricted in the same way, you can make a definition on controller level.
-
-    current_user:
-      users: admin?
-
+```yaml
+current_user:
+  users: admin?
+```
 controller definition can be namespaced.
-
-    current_user:
-      admin/users: admin?
-
+```yaml
+current_user:
+  admin/users: admin?
+```
 if you have multiple controllers under a namespace, namespace can be used.
 ending with '/' indicates that is for namespace 'admin' and not controller 'admin'.
-
-    current_user:
-      admin/: admin?
-
+```yaml
+current_user:
+  admin/: admin?
+```
 
 ### Handling error in controller
 
 In application_controller.rb, the error should be rescued like
-
-    rescue_from StrongActions::ForbiddenAction do
-      render :file => 'public/403.html', :layout => false, :status => :forbidden
-    end
-
+```ruby
+rescue_from StrongActions::ForbiddenAction do
+  render :file => 'public/403.html', :layout => false, :status => :forbidden
+end
+```
 In above case, all the forbidden accesses are handled by public/403.html.
 
 ### Disabling forbidden link in view
 
 In views, use helper method "available?" so that links for forbidden actions are not shown.
-
-    <%= link_to 'Add User' new_user_path if available?('users', 'new') %>
-
+```erb
+<%= link_to 'Add User' new_user_path if available?('users', 'new') %>
+```
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/strong_actions/fork )
