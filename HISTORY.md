@@ -1,5 +1,10 @@
 # History
 
+## 0.1.0
+* drop support for ruby-2.1
+* drop support for rails-4.1
+* add suport for rails-5.1
+
 ## 0.0.9
 * fixed thread safety issue on multi-thread environment.
 
