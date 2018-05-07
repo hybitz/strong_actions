@@ -1,5 +1,8 @@
 # History
 
+## master
+* drop support for ruby-2.2
+
 ## 0.1.0
 * drop support for ruby-2.1
 * drop support for rails-4.1
