@@ -35,7 +35,7 @@ current_user:
     update: admin?
     destroy: admin?
 ```
-In above case, when a non-admin user try to access new_user_path, StrongActions::ForbiddenAction is thrown.
+In above case, when a non-admin user try to access new_user_path for example, StrongActions::ForbiddenAction will be thrown.
 
 if all actions are restricted in the same way, you can make a definition on controller level.
 ```yaml
@@ -48,7 +48,7 @@ current_user:
   admin/users: admin?
 ```
 if you have multiple controllers under a namespace, namespace can be used.
-ending with '/' indicates that is for namespace 'admin' and not controller 'admin'.
+ending with '/' indicates that it is for namespace 'admin' and not controller 'admin'.
 ```yaml
 current_user:
   admin/: admin?
@@ -59,7 +59,7 @@ current_user:
 In application_controller.rb, the error should be rescued like
 ```ruby
 rescue_from StrongActions::ForbiddenAction do
-  render :file => 'public/403.html', :layout => false, :status => :forbidden
+  render file: 'public/403.html', layout: false, status: :forbidden
 end
 ```
 In above case, all the forbidden accesses are handled by public/403.html.
