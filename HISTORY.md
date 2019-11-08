@@ -1,5 +1,8 @@
 # History
 
+## 0.2.0
+* drop support for ruby-2.3, 2.4
+
 ## 0.1.1
 * drop support for ruby-2.2
 * add suport for rails-5.2
