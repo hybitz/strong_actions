@@ -1,16 +1,11 @@
-require 'strong_actions/decision'
+require_relative 'decision'
 
 module StrongActions
   module Controller
     extend ActiveSupport::Concern
 
     included do
-      if ::ActionPack::VERSION::MAJOR < 4
-        before_filter :authorize_roles!
-      else
-        before_action :authorize_roles!
-      end
-
+      before_action :authorize_roles!
       helper_method :available?
     end
 

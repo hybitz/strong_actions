@@ -27,6 +27,8 @@ module StrongActions
           return false if definition === false
 
           role_object = role_object_for(role)
+          return false unless role_object
+
           return false unless role_object.instance_eval(definition)
         end
 
