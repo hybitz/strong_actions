@@ -1,4 +1,7 @@
 # History
+## 0.3.0
+* drop support for ruby-2.5
+* add support for rails-6
 
 ## 0.2.1
 * drop support for rails-4.2, 5.0, 5.1（CVE-2020-8165）
