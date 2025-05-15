@@ -1,4 +1,8 @@
 # History
+## 0.4.1
+* remove dependency on concurrent-ruby
+* add development_dependency on concurrent-ruby
+
 ## 0.4.0
 * add support for rails-7.0, 7.1
 

@@ -22,9 +22,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency "activesupport", '>= 5.2', '< 7.2'
   spec.add_dependency "actionpack", '>= 5.2', '< 7.2'
   spec.add_dependency "railties", '>= 5.2', '< 7.2'
-  spec.add_dependency "concurrent-ruby", '1.3.4'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'concurrent-ruby', '1.3.4'
   spec.add_development_dependency 'minitest', '~> 5.25'
   spec.add_development_dependency 'rake', '~> 12.0'
 end
