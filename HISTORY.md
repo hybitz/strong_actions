@@ -1,4 +1,8 @@
 # History
+
+## 0.5.0
+* add support for ruby-3.0, 3.1, 3.2
+
 ## 0.4.1
 * remove dependency on concurrent-ruby
 * add development_dependency on concurrent-ruby
