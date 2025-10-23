@@ -1,5 +1,9 @@
 # History
 
+## 0.6.0
+* drop support for rails-5
+* add support for rails-7.2
+
 ## 0.5.0
 * add support for ruby-3.0, 3.1, 3.2
 
