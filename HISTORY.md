@@ -1,5 +1,8 @@
 # History
 
+## 0.6.2
+* add support for rails-8.0, 8.1, 8.2
+
 ## 0.6.1
 * add support for ruby-3.4
 
